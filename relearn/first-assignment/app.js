@@ -44,7 +44,7 @@ const server = http.createServer((req, res) => {
           <h1>Greetings from vishnu777aero!!!</h1>
           <form action='/create-user' method='POST'>
             <label for='username'>Username: </label>
-            <input name='username' type='text' />
+            <input id='username' name='username' type='text' />
             <button type='submit'>Display username in Node console</button>
           </form>
           <a href='/users'>Click here to see all users</a>
