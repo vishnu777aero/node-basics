@@ -5,7 +5,14 @@ const requestHandler = (req, res) => {
   
   if (url === '/form') {
     res.write('<html>');
-    res.write('<head><title>My Second Page</title></head>');
+    res.write(`
+      <head>
+        <title>My Second Page</title>
+        <script>
+          console.log(new Date());
+        </script>
+      </head>
+    `);
     res.write('<body>')
     res.write('<h1>test form</h1>');
     res.write('<form method="POST" action="/message">');
