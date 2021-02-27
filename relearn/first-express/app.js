@@ -1,13 +1,12 @@
 const express = require('express');
+const adminRoutes = require('./routes/admin');
 const bodyParser = require('body-parser');
 
 const app = express();
 
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(adminRoutes);
 
-app.use('/add-product', (req, res) => {
-  res.send('<form action="/post-product" method="POST"><input type="text" name="product" /><button type="submit">add</button></form>')
-})
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.post('/post-product', (req, res) => {
   console.log(req.body);
