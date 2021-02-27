@@ -13,8 +13,12 @@ app.post('/post-product', (req, res) => {
   res.redirect('/');
 })
 
-app.use('/',(req, res, next) => {
+app.get('/',(req, res, next) => {
   res.send('<h1>Home page</h1>');
 });
+
+app.use((req, res, next) => {
+  res.status(404).send('<h1>Page not found</h1>');
+})
 
 app.listen(3000);
