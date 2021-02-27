@@ -3,13 +3,13 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
-app.use(bodyParser.urlencoded({ extended: false}));
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use('/add-product', (req, res) => {
-  res.send('<form action="/post-product" method="POST"><input name="product" /><button type="submit">add</button></form>')
+  res.send('<form action="/post-product" method="POST"><input type="text" name="product" /><button type="submit">add</button></form>')
 })
 
-app.use('/post-product', (req, res) => {
+app.post('/post-product', (req, res) => {
   console.log(req.body);
   res.redirect('/');
 })
